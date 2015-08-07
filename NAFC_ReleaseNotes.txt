@@ -1,0 +1,30 @@
+Below are the updated files in NAFC application to use the Stripe Payment Gateway
+
+Modified Files:
+1) nafc-test\php\routes\pages\pages-cart.php
+2) nafc-test\php\core\RayroCart.php
+3) nafc-test\templates\pages\cart.tpl
+4) nafc-test\php\config.php
+5) nafc-test\vendor\composer\installed.json
+6) nafc-test\vendor\composer\autoload_classmap.php
+
+Added Files:
+1) nafc-test\vendor\stripe\
+
+Configuration Settings:
+1) For Enable/Disable the existing payment gateways (Paypal & Auth.NET) use the below line in "nafc-test\php\config.php"
+	define("ENABLE_PAYPAL_AUTH_PAYMENT_GATEWAY", true ); 
+
+2) Please update your Stripe API details in "nafc-test\php\config.php" with below code
+ 
+    if ( TESTMODE )
+    { 
+    	define("STRIPE_SECRET_KEY", "sk_test_uSfBq7FZY1r59b9SxfZvZ6CL");
+     	define("STRIPE_PUBLISH_KEY", "pk_test_DeJs7u5pz8JFSyJe5FMJyBNo");
+    }
+    else
+    {
+    	define("STRIPE_SECRET_KEY", "sk_test_OftxHCgKa65iTeQNnazRkcdi");
+    	define("STRIPE_PUBLISH_KEY", "pk_test_BfnZSlSJEvUorluPxvWFGr19");
+    }
+ 
